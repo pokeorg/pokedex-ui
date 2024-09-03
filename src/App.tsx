@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './pages/Login';
-import SignUp from './pages/signUp';
-import ForgotPassword from './pages/ForgotPasswordPopup';
+import SignUp from './pages/SignUp';
+
 
 const App: React.FC = () => {
   return (
@@ -10,7 +10,7 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path='/forgot-password' element={<ForgotPassword />}/>
+        
       </Routes>
     </Router>
   );

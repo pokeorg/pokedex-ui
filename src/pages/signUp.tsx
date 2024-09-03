@@ -1,5 +1,4 @@
 /** @format */
-<<<<<<< HEAD
 import GoogleLogo from "../assets/images/google-icon-logo-svgrepo-com.svg";
 import AppleLogo from "../assets/images/apple-logo-svgrepo-com.svg";
 import React from "react";
@@ -121,16 +120,3 @@ const SignUp: React.FC = () => {
 };
 
 export default SignUp;
-=======
-
-import React from "react";
-const signUp: React.FC = () => {
-  return (
-    <div className=' flex h-[100vh]'>
-      <div className='w-1/2 bg-white flex justify-center items-center '></div>
-      <div className='w-1/2 bg-custom-gradient-left'>Animation</div>
-    </div>
-  );
-};
-export default signUp;
->>>>>>> origin/SCRUM-21-page-forgot-password
