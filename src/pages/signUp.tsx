@@ -57,6 +57,20 @@ const SignUp: React.FC = () => {
                   required
                 />
               </div>
+              <div className='flex flex-col mb-6'>
+                <label
+                  htmlFor='cpass'
+                  className='mb-1 text-sm font-medium text-gray-700'>
+                  Confirm Password
+                </label>
+                <input
+                  type='password'
+                  id='cpass'
+                  className='border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-green-700'
+                  placeholder='Confirm your password'
+                  required
+                />
+              </div>
               <div className='flex items-center my-4'>
                 <input
                   type='checkbox'
@@ -120,3 +134,5 @@ const SignUp: React.FC = () => {
 };
 
 export default SignUp;
+
+//add new confirm pass field.
