@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ES2020",                         // Target JavaScript version
     "useDefineForClassFields": true,            // Use 'define' for class fields
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],    // Include standard library files
+    "lib": ["ES2023", "dom", "DOM.Iterable"],    // Include standard library files
     "module": "ESNext",                         // Module system to use
     "skipLibCheck": true,                       // Skip type checking of declaration files
 
