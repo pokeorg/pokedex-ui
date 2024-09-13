@@ -1,5 +1,5 @@
 /** @format */
-import React from "react";
+import React,{useEffect} from "react";
 import { Link } from "react-router-dom";
 
 
@@ -14,9 +14,13 @@ const ForgotPasswordPopup: React.FC<ForgotPasswordPopupProps> = ({
 }) => {
   if (!isPopupOpen) return null;
 
+  const handlePopupContentClick = (event: React.MouseEvent<HTMLDivElement>) => {
+    event.stopPropagation();
+  };
+
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-lg shadow-lg w-[480px]  p-6 relative mb-[10px]" >
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" onClick={(onClose)}>
+      <div className="bg-white rounded-lg shadow-lg w-[480px]  p-6 relative mb-[10px]" onClick={handlePopupContentClick} >
         <button
           onClick={onClose}
           className="absolute top-2 right-2 text-gray-600 hover:text-gray-900"
@@ -49,18 +53,19 @@ const ForgotPasswordPopup: React.FC<ForgotPasswordPopupProps> = ({
         <form>
           <div className="mb-4">
             <label
-              htmlFor="email"
+              htmlFor="fmail"
               className="block text-sm font-medium text-gray-700 mb-1"
             >
               Email Address
             </label>
             <input
-              type="email"
-              id="email"
-              className="border border-gray-300 rounded-lg p-2 w-full text-sm focus:border-green-700 focus:ring-2 focus:ring-green-700"
-              placeholder="Enter your email"
-              required
-            />
+  type="email"
+  id="fmail"  
+  className="border border-gray-300 rounded-lg p-2 w-full text-sm focus:outline-none focus:ring-2 focus:ring-green-700"
+  placeholder="Enter your email"
+  required
+/>
+
           </div>
           <button
             type="submit"

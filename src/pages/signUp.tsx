@@ -134,5 +134,3 @@ const SignUp: React.FC = () => {
 };
 
 export default SignUp;
-
-//add new confirm pass field.
