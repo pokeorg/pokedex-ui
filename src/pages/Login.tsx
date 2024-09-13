@@ -1,31 +1,37 @@
 /** @format */
 import GoogleLogo from "../assets/images/google-icon-logo-svgrepo-com.svg";
 import AppleLogo from "../assets/images/apple-logo-svgrepo-com.svg";
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import ForgotPasswordPopup from './ForgotPasswordPopup'; 
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import ForgotPasswordPopup from "./ForgotPasswordPopup";
 import cbs from "../assets/images/cbs.png";
-import { useAuth } from '../contexts/AuthContext';
-import { login } from '../services/auth'; 
+import { useAuth } from "../contexts/AuthContext";
+import { login } from "../services/auth";
 
 const Login: React.FC = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const { login: authLogin } = useAuth();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [rememberMe, setRememberMe] = useState(false);
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('Login form submitted'); 
+    console.log("Login form submitted");
     try {
-      const { token } = await login(email, password); // if
-      console.log('Token received:', token); 
-      authLogin(token); 
+      const { token } = await login(email, password);
+      if (rememberMe) {
+        localStorage.setItem("token", token); // Store in localStorage for persistent login
+      } else {
+        sessionStorage.setItem("token", token); // Store in sessionStorage for session-based login
+      }
+      console.log("Token received:", token);
+      authLogin(token);
       console.log("Welcome to Pokedex!");
     } catch (err) {
-      console.error('Login error:', err); 
-      setError('Login failed. Please check your credentials.');
+      console.error("Login error:", err);
+      setError("Login failed. Please check your credentials.");
     }
   };
 
@@ -34,7 +40,7 @@ const Login: React.FC = () => {
 
   return (
     <>
-      <div className={`flex h-[100vh] ${isPopupOpen ? 'blur-sm' : ''}`}>
+      <div className={`flex h-[100vh] ${isPopupOpen ? "blur-sm" : ""}`}>
         <div className='w-1/2 bg-white flex justify-center items-center'>
           <div className='flex justify-center items-center bg-white'>
             <div className='flex flex-col bg-white w-[475px] p-6'>
@@ -47,12 +53,12 @@ const Login: React.FC = () => {
               <form className='flex flex-col' onSubmit={handleSubmit}>
                 <div className='flex flex-col mb-6'>
                   <label
-                    htmlFor='email or username'
+                    htmlFor='email'
                     className='mb-1 text-sm font-medium text-gray-700'>
                     Email Address or username
                   </label>
                   <input
-                    type='email or username'
+                    type='text'
                     id='email'
                     className='border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-green-700'
                     placeholder='Enter your email'
@@ -89,6 +95,8 @@ const Login: React.FC = () => {
                   <input
                     type='checkbox'
                     id='remember'
+                    checked={rememberMe}
+                    onChange={(e) => setRememberMe(e.target.checked)} // Update state
                     className='peer h-4 w-4 text-green-700 border-gray-300 rounded accent-green-700'
                   />
                   <label
@@ -127,9 +135,11 @@ const Login: React.FC = () => {
                 </div>
                 <div className='text-center mt-4'>
                   <span className='text-gray-700 text-sm'>
-                    Don’t have an account?{' '}
+                    Don’t have an account?{" "}
                   </span>
-                  <Link to='/signup' className='text-blue-500 text-sm font-medium'>
+                  <Link
+                    to='/signup'
+                    className='text-blue-500 text-sm font-medium'>
                     Sign Up
                   </Link>
                 </div>
@@ -138,10 +148,12 @@ const Login: React.FC = () => {
           </div>
         </div>
         <div className='w-1/2 bg-black flex items-center justify-center'>
-          <img src={cbs} alt="Pokemon Image" className="object-cover" />
+          <img src={cbs} alt='Pokemon Image' className='object-cover' />
         </div>
       </div>
-      {isPopupOpen && <ForgotPasswordPopup onClose={closePopup} isPopupOpen={isPopupOpen} />}
+      {isPopupOpen && (
+        <ForgotPasswordPopup onClose={closePopup} isPopupOpen={isPopupOpen} />
+      )}
     </>
   );
 };
