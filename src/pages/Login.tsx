@@ -1,11 +1,10 @@
 /** @format */
-import GoogleLogo from "../assets/images/google-icon-logo-svgrepo-com.svg";
-import AppleLogo from "../assets/images/apple-logo-svgrepo-com.svg";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import ForgotPasswordPopup from "./ForgotPasswordPopup";
 import cbs from "../assets/images/cbs.png";
 import { useAuth } from "../contexts/AuthContext";
+import SignInButtons from '../components/auth/signInButtons';
 import { login } from "../services/auth";
 
 const Login: React.FC = () => {
@@ -22,9 +21,9 @@ const Login: React.FC = () => {
     try {
       const { token } = await login(email, password);
       if (rememberMe) {
-        localStorage.setItem("token", token); // Store in localStorage for persistent login
+        localStorage.setItem("token", token);
       } else {
-        sessionStorage.setItem("token", token); // Store in sessionStorage for session-based login
+        sessionStorage.setItem("token", token);
       }
       console.log("Token received:", token);
       authLogin(token);
@@ -96,7 +95,7 @@ const Login: React.FC = () => {
                     type='checkbox'
                     id='remember'
                     checked={rememberMe}
-                    onChange={(e) => setRememberMe(e.target.checked)} // Update state
+                    onChange={(e) => setRememberMe(e.target.checked)}
                     className='peer h-4 w-4 text-green-700 border-gray-300 rounded accent-green-700'
                   />
                   <label
@@ -110,28 +109,13 @@ const Login: React.FC = () => {
                   className='bg-green-900 text-white rounded-lg py-2 w-full hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-700'>
                   Login
                 </button>
+                {error && (
+                  <div className='mt-4 text-red-600'>{error}</div>
+                )}
                 <div className='flex items-center mt-4 mb-4'>
                   <div className='flex-grow border-t-2 border-gray-300'></div>
                   <span className='mx-2 text-gray-800'>Or</span>
                   <div className='flex-grow border-t-2 border-gray-300'></div>
-                </div>
-                <div className='flex justify-center items-center gap-5 mt-4'>
-                  <button className='w-1/2 flex items-center justify-center bg-white border border-gray-300 text-black py-2 rounded-lg'>
-                    <img
-                      src={GoogleLogo}
-                      alt='Google Logo'
-                      className='w-5 h-5 mr-2'
-                    />
-                    Sign in with Google
-                  </button>
-                  <button className='w-1/2 flex items-center justify-center bg-white border border-gray-300 text-black py-2 rounded-lg'>
-                    <img
-                      src={AppleLogo}
-                      alt='Apple Logo'
-                      className='w-5 h-5 mr-2'
-                    />
-                    Sign in with Apple
-                  </button>
                 </div>
                 <div className='text-center mt-4'>
                   <span className='text-gray-700 text-sm'>
@@ -144,6 +128,7 @@ const Login: React.FC = () => {
                   </Link>
                 </div>
               </form>
+              <SignInButtons />
             </div>
           </div>
         </div>

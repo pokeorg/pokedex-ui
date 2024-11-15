@@ -4,31 +4,41 @@ import React, { createContext, useContext, useState } from 'react';
 interface AuthContextProps {
   token: string | null;
   login: (token: string) => void;
+  signUp: (token: string) => void;
   logout: () => void;
 }
+// Create AuthContext
+export const AuthContext = createContext<AuthContextProps | undefined>(undefined);
 
-const AuthContext = createContext<AuthContextProps | undefined>(undefined);
-
+// AuthProvider component
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [token, setToken] = useState<string | null>(null);
 
+  const isBrowser = typeof window !== 'undefined'; // Check for browser
+
   const login = (newToken: string) => {
     setToken(newToken);
-    localStorage.setItem('token', newToken); // Optional: Store token in localStorage
+    if (isBrowser) {
+      window.localStorage.setItem('token', newToken); // Store token in localStorage
+    }
   };
 
-  const SignUp = (newToken: string) =>{
+  const signUp = (newToken: string) => {
     setToken(newToken);
-    localStorage.setItem('token', newToken);
-  }
+    if (isBrowser) {
+      window.localStorage.setItem('token', newToken); // Store token in localStorage
+    }
+  };
 
   const logout = () => {
     setToken(null);
-    localStorage.removeItem('token'); // Optional: Remove token from localStorage
+    if (isBrowser) {
+      window.localStorage.removeItem('token'); // Remove token from localStorage
+    }
   };
 
   return (
-    <AuthContext.Provider value={{ token, login, SignUp, logout }}>
+    <AuthContext.Provider value={{ token, login, signUp, logout }}>
       {children}
     </AuthContext.Provider>
   );
