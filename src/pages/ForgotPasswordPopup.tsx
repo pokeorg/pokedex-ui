@@ -15,6 +15,7 @@ const ForgotPasswordPopup: React.FC<ForgotPasswordPopupProps> = ({
   const [message, setMessage] = useState<string>(""); // State to store success or error messages
   const [loading, setLoading] = useState<boolean>(false); // State to manage loading state
 
+  // Prevent rendering if popup is not open
   if (!isPopupOpen) return null;
 
   // Handle email input change
@@ -26,9 +27,10 @@ const ForgotPasswordPopup: React.FC<ForgotPasswordPopupProps> = ({
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setLoading(true);
+    setMessage(""); // Reset message on new submission
 
     try {
-      const response = await fetch("http://localhost:3000/auth/forgot-password", {
+      const response: Response = await fetch("http://localhost:3000/auth/forgot-password", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -45,11 +47,14 @@ const ForgotPasswordPopup: React.FC<ForgotPasswordPopupProps> = ({
       }
     } catch (error) {
       setMessage("An error occurred. Please check your connection and try again.");
+    } finally {
+      setLoading(false); // Ensure loading state resets
     }
 
     setLoading(false);
   };
 
+  // Prevent clicks on the popup content from closing it
   const handlePopupContentClick = (event: React.MouseEvent<HTMLDivElement>) => {
     event.stopPropagation();
   };
@@ -126,7 +131,9 @@ const ForgotPasswordPopup: React.FC<ForgotPasswordPopupProps> = ({
           </form>
 
           {message && (
-            <p className="mt-4 text-sm text-center text-gray-600">{message}</p>
+            <p className={`mt-4 text-sm text-center ${message.includes("sent") ? "text-green-600" : "text-red-600"}`}>
+              {message}
+            </p>
           )}
         </div>
       </div>

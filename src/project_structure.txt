@@ -1,0 +1,64 @@
+.
+├── App.css
+├── App.tsx
+├── PokeApi.ts
+├── TextBox.tsx
+├── assets
+│   ├── fonts
+│   ├── images
+│   │   ├── apple-logo-svgrepo-com.svg
+│   │   ├── background.png
+│   │   ├── cbs.png
+│   │   ├── github.svg
+│   │   └── google-icon-logo-svgrepo-com.svg
+│   ├── react.svg
+│   └── styles
+│       └── fonts.css
+├── components
+│   ├── auth
+│   │   └── signInButtons.tsx
+│   ├── layout
+│   ├── logo
+│   └── ui
+│       ├── BackgroundImage.tsx
+│       ├── CardComponents
+│       │   ├── Backdrop.tsx
+│       │   ├── BigCard.tsx
+│       │   ├── BigCardComponent
+│       │   │   ├── BigCardButton.tsx
+│       │   │   ├── BigCardCharacteristics.tsx
+│       │   │   ├── BigCardContainer.tsx
+│       │   │   ├── BigCardNameId.tsx
+│       │   │   ├── BigCardTypes.module.css
+│       │   │   └── BigCardTypes.tsx
+│       │   ├── CardsContainer.tsx
+│       │   ├── PokemonDetails.tsx
+│       │   └── SmallCard.tsx
+│       ├── ErrorComponent.tsx
+│       ├── Loader.tsx
+│       ├── Loading.tsx
+│       ├── Pagination.tsx
+│       └── errors
+│           └── Error.tsx
+├── contexts
+│   └── AuthContext.tsx
+├── hooks
+│   └── UseFetchPokemon.ts
+├── index.css
+├── main.tsx
+├── pages
+│   ├── ForgotPasswordPopup.tsx
+│   ├── Home.tsx
+│   ├── Login.tsx
+│   ├── ResetPasswordPage.tsx
+│   └── SignUp.tsx
+├── project_structure.txt
+├── services
+│   ├── api.ts
+│   └── auth.ts
+├── store
+│   ├── pokemonSlice.ts
+│   └── store.ts
+└── vite-env.d.ts
+
+18 directories, 44 files

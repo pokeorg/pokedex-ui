@@ -48,6 +48,7 @@ const ResetPasswordPage: React.FC = () => {
     } catch (err: any) {
       setError(err.response?.data.error || 'An error occurred');
       setSuccess(null);
+
     }
   };
 
@@ -85,3 +86,7 @@ const ResetPasswordPage: React.FC = () => {
 };
 
 export default ResetPasswordPage;
+
+function setTimeout(arg0: () => void, arg1: number) {
+  throw new Error('Function not implemented.');
+}

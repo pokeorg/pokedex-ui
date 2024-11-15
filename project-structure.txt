@@ -1,0 +1,412 @@
+.
+├── .DS_Store
+├── .eslintrc.cjs
+├── .git
+│   ├── COMMIT_EDITMSG
+│   ├── FETCH_HEAD
+│   ├── HEAD
+│   ├── ORIG_HEAD
+│   ├── config
+│   ├── description
+│   ├── hooks
+│   │   ├── applypatch-msg.sample
+│   │   ├── commit-msg.sample
+│   │   ├── fsmonitor-watchman.sample
+│   │   ├── post-update.sample
+│   │   ├── pre-applypatch.sample
+│   │   ├── pre-commit.sample
+│   │   ├── pre-merge-commit.sample
+│   │   ├── pre-push.sample
+│   │   ├── pre-rebase.sample
+│   │   ├── pre-receive.sample
+│   │   ├── prepare-commit-msg.sample
+│   │   ├── push-to-checkout.sample
+│   │   └── update.sample
+│   ├── index
+│   ├── info
+│   │   └── exclude
+│   ├── logs
+│   │   ├── HEAD
+│   │   └── refs
+│   │       ├── heads
+│   │       │   ├── SCRUM-16-api-forgot-password
+│   │       │   ├── SCRUM-21-page-forgot-password
+│   │       │   ├── SCRUM-23-api-login-integration-with-frontend
+│   │       │   ├── SCRUM-24-sign-up-api-integration-with-front-end
+│   │       │   ├── SCRUM-26-api-google-and-apple-signup-buttons
+│   │       │   ├── main
+│   │       │   └── setup
+│   │       └── remotes
+│   │           └── origin
+│   │               ├── SCRUM-16-api-forgot-password
+│   │               ├── SCRUM-21-page-forgot-password
+│   │               ├── SCRUM-23-api-login-integration-with-frontend
+│   │               ├── SCRUM-24-sign-up-api-integration-with-front-end
+│   │               ├── SCRUM-26-api-google-and-apple-signup-buttons
+│   │               ├── main
+│   │               └── setup
+│   ├── objects
+│   │   ├── 00
+│   │   │   └── 3ef35f2e80e6ec2a695e98e523a0f6423e0cd6
+│   │   ├── 01
+│   │   │   ├── 82aabd8cc6963e5823d7b7fca9472aff8d1eee
+│   │   │   └── 8550bf4176f81201cad4d359a6bbc2c1721a5e
+│   │   ├── 02
+│   │   │   ├── 42152d84934e5c0032509d2624e04c7f5cce03
+│   │   │   └── 687dc40ce216405d948b7431958c6f7881d25b
+│   │   ├── 03
+│   │   │   └── 9859a7a757726a7966877da4456c52db4f13c1
+│   │   ├── 09
+│   │   │   └── 2408a9f09eae19150818b4f0db5d1b70744828
+│   │   ├── 0a
+│   │   │   ├── 1843ca26480f4087390ea26f79ee245a007d5c
+│   │   │   └── d1c57b72e11f366eb53cb4c1773e21dcf1e66d
+│   │   ├── 0c
+│   │   │   └── 824de4cf9bea65e151bc9cc216ccb337e08fc7
+│   │   ├── 0d
+│   │   │   ├── 3d71446a455c5f997e3cffb25099dab0f74a9b
+│   │   │   └── e6749fc9cf1ea6c8e00d4e3bd0b39f14ae73cf
+│   │   ├── 0e
+│   │   │   └── e4e0526ac87098ce6ef1897e391b57903e72ed
+│   │   ├── 11
+│   │   │   ├── 7fc658a1d815f452229ef245a406e382383528
+│   │   │   ├── e20b95c00e4a7d17f4bba6172ee8970ab60df6
+│   │   │   └── f02fe2a0061d6e6e1f271b21da95423b448b32
+│   │   ├── 13
+│   │   │   └── ec017fe20f56cc225964f48c0f1ada62bfb8b0
+│   │   ├── 14
+│   │   │   ├── 97b91ec4ad19d1f4984c58252ad9dd2512877b
+│   │   │   └── f9cb9694c069289558dd56b8a9d2deb4a646bc
+│   │   ├── 19
+│   │   │   └── 13728411718e8e5fa653febdf05b9626f99049
+│   │   ├── 1b
+│   │   │   └── f0d623f07ecbcaa6ffec4ff5377ae7ef28c67e
+│   │   ├── 1c
+│   │   │   ├── 4e6c2a4a9185b622461e056e8af2994ae622ee
+│   │   │   ├── 6ae450055c9e0730ebe2d9fc594a7379eac818
+│   │   │   └── d42cc9fce5ba34c9dd5592e54e68a5198d0104
+│   │   ├── 1e
+│   │   │   └── ef4a632f274c07fd242135db967c26abdde989
+│   │   ├── 1f
+│   │   │   ├── 72fee7d9e84784e567171d884595d863c19de7
+│   │   │   └── fef600d959ec9e396d5a260bd3f5b927b2cef8
+│   │   ├── 21
+│   │   │   └── bdd539fc66dafb65ab1c21e4a81c9eec68b2bd
+│   │   ├── 22
+│   │   │   └── e51ccc561f8f80e0e78427e6ab09a9f28c4144
+│   │   ├── 25
+│   │   │   └── adc100d9c1c898049df727973a46bf55889703
+│   │   ├── 28
+│   │   │   └── 018d8a4878b66722604bdf417556ae14c0bb92
+│   │   ├── 2d
+│   │   │   └── 4c90deb15a3b6fa37cee9e2b0f221cd3deac3f
+│   │   ├── 2e
+│   │   │   └── 7af2b7f1a6f391da1631d93968a9d487ba977d
+│   │   ├── 32
+│   │   │   └── 2783ca56042ce2225e8906d96652a4ff7212a8
+│   │   ├── 34
+│   │   │   └── def79ca6d04e41668fd0166049e33738994a56
+│   │   ├── 35
+│   │   │   └── f88a898893783da2450edd6f16a220905b449a
+│   │   ├── 36
+│   │   │   └── bdb5aa668b6c6725fd05290cf3383deef1d899
+│   │   ├── 39
+│   │   │   └── 885ae2d7b88b4b13b0cd5372dbfa7682b2aa9b
+│   │   ├── 3f
+│   │   │   └── fa2aabbd8b0cbb5563d35fed12656427bcdd04
+│   │   ├── 40
+│   │   │   └── 5b7ab03ef6b71e973c8811c7987267339e9f7d
+│   │   ├── 41
+│   │   │   └── a1c79bc5182f3481206d07d273d3c00d908188
+│   │   ├── 43
+│   │   │   └── c83c0f57ff684738547baf369218b743e913aa
+│   │   ├── 44
+│   │   │   └── 6e755150b9751b13ea86b0267be79793ce44cc
+│   │   ├── 46
+│   │   │   ├── 62c84bc3d791968237e8d37c31849298cb09c8
+│   │   │   ├── a792a12517622b62316d00b11d29d552592215
+│   │   │   └── e939798ba52ef4ee862a07ba392be2f8a6d718
+│   │   ├── 47
+│   │   │   └── f1548351d5fd47aac559d38ad0386bc2f1b837
+│   │   ├── 48
+│   │   │   └── 5b43c366c275c534099e721409899e7481cf0f
+│   │   ├── 49
+│   │   │   └── 4fb2ffd3ee4d214a6ef64f6476f1b0f656c956
+│   │   ├── 4a
+│   │   │   ├── 0ce526ca6d34e8010967a9ab0642eb9d050a06
+│   │   │   └── 4ea3e91bde742604b5d60023a0eb46867ac4f1
+│   │   ├── 4d
+│   │   │   └── 04b9854f57181c5c3e3671fa7bc9a130181073
+│   │   ├── 50
+│   │   │   └── 68aea852a626f56f560aca28a1255af9790b9a
+│   │   ├── 52
+│   │   │   └── 6f63f47f94197c5a48220a2bd6a4fd00a1b42b
+│   │   ├── 54
+│   │   │   └── 70b4862e931c1583401e778921a6cd50a39583
+│   │   ├── 55
+│   │   │   └── 7b37c44d5cb352ff331f90e7fba0189cdfa65e
+│   │   ├── 57
+│   │   │   └── 1871fd3d2a7854804ec1b4bc231ee5ab85f5ff
+│   │   ├── 58
+│   │   │   └── 8097e4bbc60778a6c9f101e68a97ea09d7296a
+│   │   ├── 59
+│   │   │   ├── 227118f9ba5f02b6524197e0d44fe03a2ce8e0
+│   │   │   ├── 9afeeafd431c7743862dd72e245c43fc38b69c
+│   │   │   └── e85accf74da8ecb9db0f66b41d610ade859a8b
+│   │   ├── 5a
+│   │   │   └── 33944a9b41b59a9cf06ee4bb5586c77510f06b
+│   │   ├── 5c
+│   │   │   └── 60fab8ba567939d857fdda9855cdcca1a11118
+│   │   ├── 5f
+│   │   │   ├── 51416d5804450ee488236d37ee2aad4947bdab
+│   │   │   └── b043835a243cc64c0af7073bd3bd62da059958
+│   │   ├── 61
+│   │   │   └── 19ad9a8faaa5073a454f67b50fb98a25972fd2
+│   │   ├── 62
+│   │   │   └── 6bda4107f2ed0511b3ba6792212187a751aaff
+│   │   ├── 63
+│   │   │   └── fda7b1a145b68295617fc60f2dd3fc60c81c82
+│   │   ├── 65
+│   │   │   └── 8e98653eed055425a56f2bc167791027a524c0
+│   │   ├── 69
+│   │   │   └── d046b694fb46986154606615464f0b866c2f3b
+│   │   ├── 6c
+│   │   │   └── 87de9bb3358469122cc991d5cf578927246184
+│   │   ├── 6e
+│   │   │   └── b3d58640555429fd81566e252301911563a9fd
+│   │   ├── 6f
+│   │   │   └── 4ac9bcca823100838b88e0b570a28d2fbde6b1
+│   │   ├── 70
+│   │   │   ├── 2a14321e296c74a25ed755da0cf214eec1734d
+│   │   │   └── db5806038e76e8e1f53293a2faefa3ed3ec02e
+│   │   ├── 74
+│   │   │   └── 872fd4af60fb8d6cdb7d27e6c587ee0b6e1df7
+│   │   ├── 75
+│   │   │   └── 48e56bd3cea59f49ccb738c8b4674432818f94
+│   │   ├── 77
+│   │   │   └── eaf029bc93459b33715de5f33081c1bb755531
+│   │   ├── 78
+│   │   │   ├── 04024049b76c285759784620812601abde62f0
+│   │   │   └── 4a2419b3129a9b6e68b2f90ba86d24f76adc26
+│   │   ├── 7a
+│   │   │   ├── 95baf70d3bc51a84d3f419bb7db5408fa264e3
+│   │   │   └── d6a0bb235a1bee07bec031f06032d298670e87
+│   │   ├── 7b
+│   │   │   └── c27cffd12ecbd900ff43e44c267130c3859573
+│   │   ├── 83
+│   │   │   ├── 99683686e429821f9e3dc52d375f9573b08ea2
+│   │   │   └── a3190556c4fef082aabc992974aebca5f72082
+│   │   ├── 86
+│   │   │   ├── ba98942e33343025520e4ee868210fa7411b65
+│   │   │   └── f7a782010abd0011fbba49497d606fd319b9af
+│   │   ├── 89
+│   │   │   ├── 1118c749713d9c481d2e3cf21dd3e4747844aa
+│   │   │   └── 8d54e5f2b62cf2f673c0328acc43b80591f4d6
+│   │   ├── 8b
+│   │   │   └── 9d2f7595bf6eaba55ef860a5c88b37b0bd8943
+│   │   ├── 8d
+│   │   │   └── 347f301519846fa3ae7afbd645e059aa23ed97
+│   │   ├── 91
+│   │   │   └── 1ea381a6192e4bcd2d3ad21ead60ac92be73ab
+│   │   ├── 94
+│   │   │   └── c0b2fc152a086447a04f62793957235d2475be
+│   │   ├── 95
+│   │   │   └── 1e9e24513f92ec50d2352cd1da5459118a6482
+│   │   ├── 96
+│   │   │   ├── 0a891cdfc94bd1333b311c02f84fa8ac4ab0d7
+│   │   │   └── bc622a6365c0961f009dc1c045aee8c18c8e54
+│   │   ├── 98
+│   │   │   └── b657098fb7c9aa18b8327e1c0bb8b61cea5799
+│   │   ├── 99
+│   │   │   └── 5901908cc9c0a1916c6570db526329d40fbc35
+│   │   ├── 9b
+│   │   │   └── f24217b1c5aeed752f5ee56f799900022668af
+│   │   ├── a0
+│   │   │   └── 307a28a8c2f15e052452de2c91881fe7f71ead
+│   │   ├── a5
+│   │   │   └── 47bf36d8d11a4f89c59c144f24795749086dd1
+│   │   ├── ac
+│   │   │   └── f0957795259fa1cf40a186a97b24241ac901ef
+│   │   ├── ae
+│   │   │   └── 7200f9e8d8fe9d250a3021a5bc5013e8cb6fc5
+│   │   ├── af
+│   │   │   └── e48ac750194a747f5665300d14049f72011a33
+│   │   ├── b4
+│   │   │   └── 196eb2860bc6cd7f03cc4a00d0ad53f34562f1
+│   │   ├── b7
+│   │   │   └── 04f861dd45a8b87f2e0e7b50c685e323dc97f0
+│   │   ├── b8
+│   │   │   └── ed199e48b4f87480f9c7ed74fd9a0437aae2ca
+│   │   ├── b9
+│   │   │   ├── d07b253fee17622877bede83796b86cc246c7c
+│   │   │   └── d355df2a5956b526c004531b7b0ffe412461e0
+│   │   ├── bd
+│   │   │   └── 538dc864485ea2158a65f422a3a591d8dcbbe7
+│   │   ├── c7
+│   │   │   └── 8c88d2fb441a794391d94f8df838965b47a747
+│   │   ├── c8
+│   │   │   ├── 803583b5e0fd282e9eabd14651f41738229275
+│   │   │   └── e7ee062c16de54cf2ce6866b33984c8c5ef1e7
+│   │   ├── ca
+│   │   │   └── 8db1f20fec88097410a0bff7d67a8f216bfe49
+│   │   ├── cd
+│   │   │   └── 19a4e536f016497c2477f6d88ddb1dcb27e001
+│   │   ├── ce
+│   │   │   └── 88b938028e4006da2547b4b513ddbf7d6d0cbd
+│   │   ├── d1
+│   │   │   ├── 7ffb1c7394b97b586ddffbbb0fcd6c0362b468
+│   │   │   └── 9d939ebc75ba2d4bbc5af0be74a3e847983bb2
+│   │   ├── d2
+│   │   │   └── f38671af66be3de1a4c588efce9e411a798000
+│   │   ├── d4
+│   │   │   └── 0e8d42049a8b54bba75720a2b187162b50aa69
+│   │   ├── d6
+│   │   │   └── 5e6d1d244522d777c7a67f9a8bd3b54c88f4f7
+│   │   ├── d9
+│   │   │   └── b2f3a65a119a3de1356f5af407ad4cc9cfe2cf
+│   │   ├── dd
+│   │   │   └── 7368840cfc48a692f0c85894dc1a61442396e5
+│   │   ├── de
+│   │   │   └── 5873a528927e6fe4dd2fdbe7a1a409d8310d86
+│   │   ├── e0
+│   │   │   └── c96d2f050b9d324e8ed590c7812c59fe7fd81c
+│   │   ├── e4
+│   │   │   └── b78eae12304a075fa19675c4047061d6ab920d
+│   │   ├── e5
+│   │   │   └── 0d39de6364145fa000c043176ff5729ef29a2f
+│   │   ├── e6
+│   │   │   ├── 9de29bb2d1d6434b8b29ae775ad8c2e48c5391
+│   │   │   └── ac2bc43bb70c4816fb9909ae765a8514914081
+│   │   ├── e7
+│   │   │   ├── 782bc0b090f036d42343f923e34dc204b942c6
+│   │   │   └── b8dfb1b2a60bd50538bec9f876511b9cac21e3
+│   │   ├── e9
+│   │   │   └── b887e2fb528c728ee2c4ae51bd67e521342de0
+│   │   ├── eb
+│   │   │   └── d524c4b4926bab0f300a789add57a328ac8004
+│   │   ├── ec
+│   │   │   └── 5da58ff12db8c8c288db56aa5665d11184074b
+│   │   ├── ed
+│   │   │   └── ad61a9c4c7124481a775070771172269bad71a
+│   │   ├── f0
+│   │   │   └── a235055d24607ba5e0bedc494ffc35b5956fbb
+│   │   ├── f2
+│   │   │   └── 6e6c86dd507a82e68fc729a9e9270b00bcecd4
+│   │   ├── f4
+│   │   │   └── 8fe8859a455913491ba2903f6dfb66a0ac037b
+│   │   ├── f5
+│   │   │   └── 2526c68e2c46d22dab9d23f25bf5e9070cb383
+│   │   ├── f7
+│   │   │   └── 0177a501468a3603197627587675b2ba28910a
+│   │   ├── f8
+│   │   │   └── 1afd095f81b533f39063e9b6fcc5c3910ba0e8
+│   │   ├── f9
+│   │   │   └── 287fdfb981e9c5277896757650066b8229dc14
+│   │   ├── fa
+│   │   │   └── 0e131dcaadadd51f6c6b3841ce0a25424ba720
+│   │   ├── fd
+│   │   │   └── 88eaa568b8c84e9988027941de223f7a3757d6
+│   │   ├── fe
+│   │   │   ├── 181e4e34a1ee75c01fa63004334fd61367105a
+│   │   │   └── 920d8c2fa7f582feec4e54c86ce2738fa3c7b9
+│   │   ├── info
+│   │   └── pack
+│   ├── packed-refs
+│   └── refs
+│       ├── heads
+│       │   ├── SCRUM-16-api-forgot-password
+│       │   ├── SCRUM-21-page-forgot-password
+│       │   ├── SCRUM-23-api-login-integration-with-frontend
+│       │   ├── SCRUM-24-sign-up-api-integration-with-front-end
+│       │   ├── SCRUM-26-api-google-and-apple-signup-buttons
+│       │   ├── main
+│       │   └── setup
+│       ├── remotes
+│       │   └── origin
+│       │       ├── SCRUM-16-api-forgot-password
+│       │       ├── SCRUM-21-page-forgot-password
+│       │       ├── SCRUM-23-api-login-integration-with-frontend
+│       │       ├── SCRUM-24-sign-up-api-integration-with-front-end
+│       │       ├── SCRUM-26-api-google-and-apple-signup-buttons
+│       │       ├── main
+│       │       └── setup
+│       └── tags
+├── .gitignore
+├── README.md
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── project-structure.txt
+├── public
+│   └── vite.svg
+├── src
+│   ├── .DS_Store
+│   ├── App.css
+│   ├── App.tsx
+│   ├── PokeApi.ts
+│   ├── assets
+│   │   ├── .DS_Store
+│   │   ├── fonts
+│   │   ├── images
+│   │   │   ├── .DS_Store
+│   │   │   ├── apple-logo-svgrepo-com.svg
+│   │   │   ├── background.png
+│   │   │   ├── cbs.png
+│   │   │   ├── github.svg
+│   │   │   └── google-icon-logo-svgrepo-com.svg
+│   │   ├── react.svg
+│   │   └── styles
+│   │       └── fonts.css
+│   ├── components
+│   │   ├── .DS_Store
+│   │   ├── auth
+│   │   │   └── signInButtons.tsx
+│   │   ├── layout
+│   │   ├── logo
+│   │   └── ui
+│   │       ├── BackgroundImage.tsx
+│   │       ├── CardComponents
+│   │       │   ├── Backdrop.tsx
+│   │       │   ├── BigCard.tsx
+│   │       │   ├── BigCardComponent
+│   │       │   │   ├── BigCardButton.tsx
+│   │       │   │   ├── BigCardCharacteristics.tsx
+│   │       │   │   ├── BigCardContainer.tsx
+│   │       │   │   ├── BigCardNameId.tsx
+│   │       │   │   ├── BigCardTypes.module.css
+│   │       │   │   └── BigCardTypes.tsx
+│   │       │   ├── CardsContainer.tsx
+│   │       │   └── SmallCard.tsx
+│   │       ├── ErrorComponent.tsx
+│   │       ├── Loader.tsx
+│   │       ├── Loading.tsx
+│   │       ├── Pagination.tsx
+│   │       └── errors
+│   │           └── Error.tsx
+│   ├── contexts
+│   │   └── AuthContext.tsx
+│   ├── hooks
+│   │   └── UseFetchPokemon.ts
+│   ├── index.css
+│   ├── main.tsx
+│   ├── pages
+│   │   ├── ForgotPasswordPopup.tsx
+│   │   ├── Home.tsx
+│   │   ├── Login.tsx
+│   │   ├── ResetPasswordPage.tsx
+│   │   └── SignUp.tsx
+│   ├── services
+│   │   ├── api.ts
+│   │   └── auth.ts
+│   ├── types
+│   ├── utils
+│   └── vite-env.d.ts
+├── tailwind.config.js
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
+
+154 directories, 256 files

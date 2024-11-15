@@ -1,18 +1,22 @@
 /* src/index.css */
+@import './assets/styles/fonts.css'; /* Move this to the top */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import './assets/styles/fonts.css';
-
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 }
+
 body {
   @apply font-poppins;
 }
 
-
-
+.thumbnail {
+  width: 150px;
+  height: 150px;
+  object-fit: cover; /* Ensures the image scales nicely */
+}

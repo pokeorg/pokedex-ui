@@ -1,10 +1,10 @@
 /** @format */
 import GoogleLogo from "../assets/images/google-icon-logo-svgrepo-com.svg";
-import AppleLogo from "../assets/images/apple-logo-svgrepo-com.svg";
+import GithubLogo from "../assets/images/github.svg";  // Updated to use Github logo
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from '../contexts/AuthContext'; // Adjust the path to where your context is defined
-import { signup } from "../services/auth"; 
+import { signup } from "../services/auth";
 import cbs from "../assets/images/cbs.png";
 
 // Reusable form input component for better readability and reusability
@@ -15,8 +15,8 @@ const FormInput: React.FC<{
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   placeholder: string;
-  errorMessage?: string;                              //to add errorMessage prop
-}> = ({ label, type, id, value, onChange, placeholder,errorMessage }) => (
+  errorMessage?: string; //to add errorMessage prop
+}> = ({ label, type, id, value, onChange, placeholder, errorMessage }) => (
   <div className='flex flex-col mb-6'>
     <label htmlFor={id} className='mb-1 text-sm font-medium text-gray-700'>
       {label}
@@ -47,6 +47,13 @@ const SignUp: React.FC = () => {
   const navigate = useNavigate();
   const { login } = useAuth();
 
+  const handleGoogleLogin = () => {
+    window.location.href = 'http://localhost:3000/auth/google'; // Redirect to backend Google route
+  };
+
+  const handleGitHubLogin = () => {
+    window.location.href = 'http://localhost:3000/auth/github'; // Redirect to backend GitHub route
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -62,7 +69,7 @@ const SignUp: React.FC = () => {
 
     setLoading(true); // Show a loading state while processing the signup
     try {
-      const { token } =  await signup(username, email, password);
+      const { token } = await signup(username, email, password);
       console.log("Registration successful. Token generated:", token); // Call signup function
       login(token);
       setSuccess('Signup successful! Redirecting to login...');
@@ -73,9 +80,8 @@ const SignUp: React.FC = () => {
       } else if (err.message.includes("Username is already in use")) {
         setUsernameError('Username is already in use. Please choose a different username.');
       } else {
-      setError('Signup failed. Please check your details.');
-       }
-
+        setError('Signup failed. Please check your details.');
+      }
     } finally {
       setLoading(false);
     }
@@ -95,22 +101,22 @@ const SignUp: React.FC = () => {
               
               {/* Form inputs */}
               <FormInput
-                label="Userame"
+                label="Username"
                 type="text"
                 id="name"
                 value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                onChange={(e) => { setUsername(e.target.value); setUsernameError(''); }}
                 placeholder="Enter your username"
-                errorMessage={usernameError} 
+                errorMessage={usernameError}
               />
               <FormInput
                 label="Email Address"
                 type="email"
                 id="email"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => { setEmail(e.target.value); setEmailError(''); }}
                 placeholder="Enter your email"
-                errorMessage={emailError} 
+                errorMessage={emailError}
               />
               <FormInput
                 label="Password"
@@ -158,7 +164,9 @@ const SignUp: React.FC = () => {
               </div>
 
               <div className='flex justify-center items-center gap-5 mt-4'>
-                <button className='w-1/2 flex items-center justify-center bg-white border border-gray-300 text-black py-2 rounded-lg'>
+                <button
+                  className='w-1/2 flex items-center justify-center bg-white border border-gray-300 text-black py-2 rounded-lg'
+                  onClick={handleGoogleLogin}>
                   <img
                     src={GoogleLogo}
                     alt='Google Logo'
@@ -166,13 +174,15 @@ const SignUp: React.FC = () => {
                   />
                   Sign up with Google
                 </button>
-                <button className='w-1/2 flex items-center justify-center bg-white border border-gray-300 text-black py-2 rounded-lg'>
+                <button
+                  className='w-1/2 flex items-center justify-center bg-white border border-gray-300 text-black py-2 rounded-lg'
+                  onClick={handleGitHubLogin}>
                   <img
-                    src={AppleLogo}
-                    alt='Apple Logo'
+                    src={GithubLogo} // Updated to use Github logo
+                    alt='Github Logo'
                     className='w-5 h-5 mr-2'
                   />
-                  Sign up with Apple
+                  Sign up with Github
                 </button>
               </div>
 
